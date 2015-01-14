@@ -2,7 +2,7 @@ class ShoppingList
 
   def items(&block) #takes in a block to use in creating cart items
     if  block_given?
-      @items = CartItem.new(&block) #this causes the block content to be executed as tho it were a code in the class body 
+      CartItem.new(&block) #this causes the block content to be executed as tho it were a code in the class body 
     else
       raise "Error: You need to pass a block of code for execution!"
     end     
