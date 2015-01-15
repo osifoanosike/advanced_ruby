@@ -1,2 +1,3 @@
 class InteractiveProgram
+
 end

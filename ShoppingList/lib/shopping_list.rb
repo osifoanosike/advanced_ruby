@@ -1,4 +1,10 @@
 class ShoppingList  
+  attr_accessor :items
+
+
+  def initialize
+    @items = []
+  end
 
   def items(&block) #takes in a block to use in creating cart items
     if  block_given?
@@ -7,6 +13,11 @@ class ShoppingList
       raise "Error: You need to pass a block of code for execution!"
     end     
   end
+
+  def display
+
+  end
+
 end
 
 
@@ -23,7 +34,10 @@ class CartItem
 
   def add(name, quantity)
     @name, @quantity = name, quantity
-    puts "\nItem added to cart:\n#{@name}, Quantity: #{@quantity}"
+    # ShoppingList.class_eval do 
+    #   @items << "Name :#{@name}, Quantity: #{@quantity}"
+    # end
+    puts binding #instance_variables_get(@items)
   end
 end
 

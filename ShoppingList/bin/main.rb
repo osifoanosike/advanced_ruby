@@ -6,3 +6,7 @@ shoplist.items do
   add("Toothpaste",2) 
   add("Computer",1)
 end
+
+shoplist.display
+
+# puts "Items in list: #{shoplist.items}"
