@@ -7,20 +7,15 @@ class Objectify
 		@file_content ||= get_content unless defined? @file_content
 	end
 
-	def create_classes
-		# @file_path = "persons.csv"
+	def create_classes		
 		@file_path  = "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/persons.csv"
 		file_name = File.basename(file_path, ".csv").chomp("s")
 		first_char = file_name[0]
 		class_name = file_name.gsub(first_char, first_char.upcase)
-
-		obj_name = Object.const_set(class_name, Class.new) #creates class from string
-
-
-		file_content #should move iniside initialize
-
+		Object.const_set(class_name, Class.new) #creates class from string
+		
+		file_content #should i move iniside initialize?
 		create_functions(create_objects(class_name, @file_content), @file_content[0])
-		# create_objects(class_name, @file_content)
 
 	end
 
@@ -48,7 +43,7 @@ class Objectify
 				class_object.class.class_eval("def #{method_name}; end")
 			end
 			puts "\n#{class_object.class} #{count}"
-			puts class_object.methods.sort.inspect
+			puts class_object.class.instance_methods(false).sort.inspect
 			count += 1
 		end
 	end
