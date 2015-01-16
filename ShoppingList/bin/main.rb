@@ -8,8 +8,4 @@ shoplist.items do
   add("Computer",1)
 end
 
-shoplist.items
-
-
-
-# puts "Items in list: #{shoplist.items}"
+puts shoplist.items
