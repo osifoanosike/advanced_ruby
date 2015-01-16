@@ -4,11 +4,11 @@ input = "enter a string" #this creates a String object instance
 
 #singleton method
 def input.get_vowels
-	vowels = []
-	self.each_char do |char|
-		vowels << char if char.match(/[aeiou]/)
-	end
-	puts vowels.uniq!
+  vowels = []
+  self.each_char do |char|
+    vowels << char if char.match(/[aeiou]/)
+  end
+  puts vowels.uniq!
 end
 
 input.get_vowels
