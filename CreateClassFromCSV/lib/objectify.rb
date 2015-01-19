@@ -4,7 +4,7 @@ class Objectify
 
 
   def initialize
-    @file_path  = "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/persons.csv"
+    @file_path  = "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/person.csv"
     file_name = File.basename(@file_path, ".csv").chomp("s")
 
     first_char = file_name[0]
@@ -34,7 +34,7 @@ class Objectify
         content << row
       end
     rescue Exception => e
-      puts "Something went wrong. We couldn't read from CSV file: #{e.message}"
+      puts "Something went wrong. We couldn't read from CSV file: #{e.message}\n#{e.backtrace.inspect}"
     else
       content
     end
