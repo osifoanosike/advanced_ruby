@@ -1,6 +1,6 @@
-class ShoppingList  
-  attr_accessor :items
+require_relative 'cart_item.rb'
 
+class ShoppingList  
   def initialize
     @items = Hash.new(0) #holding the items as key-value pairs
   end
@@ -17,16 +17,4 @@ class ShoppingList
     item = CartItem.new(item_name, item_quantity)
     @items[item.name] += item.quantity
   end
-
 end
-
-class CartItem
-  attr_accessor :name, :quantity
-
-  def initialize(name, quantity)
-    @name, @quantity = name, quantity
-  end 
-end
-
-
-
