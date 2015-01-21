@@ -1,11 +1,17 @@
 require_relative '../lib/interactive_program.rb'
 
-puts "Enter method name"
-method_name = gets.chomp
+code = ""
 
-puts "Enter code to be executed"
-code = gets.chomp
+puts "Enter code (q to quit, Hit enter to execute)"
 
-InteractiveProgram.class_eval("def #{method_name}; #{code}; end")
-interactive = InteractiveProgram.new
-interactive.send(method_name)
+
+loop do
+	input = gets
+	if input == "\n"
+		puts InteractiveProgram.new.execute(code)
+	elsif /q/i =~ input 
+		break
+	else
+		code  += input
+	end
+end
