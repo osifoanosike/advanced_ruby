@@ -1,12 +1,13 @@
 require_relative '../lib/interactive_program.rb'
 
 code = ""
-puts "Enter code (q to quit, Hit enter to execute)"
+puts "Enter code (or q to quit, Hit enter to execute)"
 
 loop do
 	input = gets
 	if input == "\n"
-		puts InteractiveProgram.new.execute(code)
+		InteractiveProgram.new.execute(code, binding)
+		code = ""
 	elsif /q/i =~ input 
 		break
 	else

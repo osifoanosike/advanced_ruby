@@ -1,5 +1,5 @@
 class InteractiveProgram
-	def execute(xx)
-		eval("#{xx}")
+	def execute(code,mybinding)
+		eval code, mybinding
 	end
 end
