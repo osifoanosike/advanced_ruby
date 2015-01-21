@@ -5,8 +5,8 @@ class String
 
   #singleton method using class << self
   class << self
-    def shout
-      self.upcase
+    def shout obj
+      obj.upcase
     end
   end
 end

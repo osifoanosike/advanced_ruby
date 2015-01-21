@@ -13,7 +13,6 @@ end
 
 input.get_vowels
 
-input = "me" #another instance of String. 
-input.get_vowels #invokes method_missing coz it calls a singleton method
-
-puts "String class' singleton methods: #{ String.singleton_methods }"
+input2 = "Osifo lives in Nigeria" #another instance of String. 
+input2.get_vowels #invokes method_missing coz it calls a singleton method
+p String.shout input2 #shout is a singleton method defined on input(an pbject of string)
