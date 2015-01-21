@@ -1,12 +1,17 @@
 require_relative '../lib/derived_string.rb'
 
+args = ""
 puts "enter a string"
 string = DerivedString.new(gets.chomp)
 
-puts "enter a string for check for exclusion"
-search_arg = DerivedString.new(gets.chomp)
+puts "enter a method to call:\nExisting methods are: exclude?(search_param) and reverse"
+method_name = gets.chomp.downcase
 
-#dynamic method creation
-puts "Excluded from string?: #{ string.send(:exclude?, search_arg) }"
 
-puts "Reversed string: #{ string.reverse }"
+if method_name.match(/^exclude?$/)
+  puts "enter the string to search for exclusion"
+  arg = gets.chomp
+  string.send("#{method_name}", arg)
+else
+  string.send("#{method_name}")
+end
