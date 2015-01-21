@@ -1,10 +1,8 @@
 require 'csv'
 class Objectify
-  # attr_accessor :file_path, :file_content
 
-
-  def initialize
-    @file_path  = "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/person.csv"
+  def initialize(file_path)
+    @file_path  = file_path # "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/person.csv"
     file_name = File.basename(@file_path, ".csv").chomp("s")
 
     first_char = file_name[0]
@@ -17,7 +15,7 @@ class Objectify
 
   def set_file_content
     #implements Memoization
-    @file_content ||= get_content unless defined? @file_content
+    @file_content ||= get_content
   end
 
 
