@@ -2,12 +2,14 @@ require_relative 'cart_item.rb'
 
 class ShoppingList  
   def initialize
-    @items = Hash.new(0) #holding the items as key-value pairs
+    #holding the items as key-value pairs
+    @items = Hash.new(0) 
   end
 
-  def items(&block) #takes in a block to use in creating cart items
+  #takes in a block to use in creating cart items
+  def items(&block) 
     if  block_given?
-      instance_eval(&block) #this causes the block content to be executed as tho it were a code in the class body 
+      instance_eval(&block) 
     else
       @items
     end     
