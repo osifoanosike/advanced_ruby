@@ -8,7 +8,7 @@ puts "enter a method to call:\nExisting methods are: exclude?(search_param) and 
 method_name = gets.chomp.downcase
 
 
-if method_name.match(/^exclude?$/)
+if method_name.match(/^exclude\?$/)
   puts "enter the string to search for exclusion"
   arg = gets.chomp
   string.send("#{method_name}", arg)

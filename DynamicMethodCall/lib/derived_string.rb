@@ -1,7 +1,6 @@
 class DerivedString < String
   def exclude?(string)
-    string =  string.to_s.downcase
-    puts "exclusion: #{!to_s.downcase.include?(string)? "Yes" : "No"}"
+    puts "exclusion: #{!to_s.downcase.include?(string.to_s.downcase)? "Yes" : "No"}"
   end
 
   def reverse 
