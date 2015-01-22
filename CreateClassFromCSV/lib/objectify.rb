@@ -1,15 +1,20 @@
 require 'csv'
 class Objectify
 
-  def initialize(file_path)
-    @file_path  = file_path # "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/person.csv"
-    file_name = File.basename(@file_path, ".csv").chomp("s")
+  def initialize(file_name)
+    file_name = file_name.gsub('.csv', '')
+    file_path = File.expand_path("../#{file_name}.csv", __FILE__)
 
-    first_char = file_name[0]
-    @class_name = file_name.gsub(first_char, first_char.upcase)
-    Object.const_set(@class_name, Class.new) #creates class from string
+    if !File.exist?(file_path)
+      raise "The file: #{file_path} doesnt exist."
+    else
+      @file_path  = file_path # "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/person.csv"
+      first_char = file_name[0]
+      @class_name = file_name.gsub(first_char, first_char.upcase)
+      Object.const_set(@class_name, Class.new) #creates class from string
 
-    set_file_content
+      set_file_content
+    end   
   end
 
 
