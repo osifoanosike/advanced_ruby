@@ -7,7 +7,7 @@ class DerivedString < String
     reverse!
   end
 
-  def method_missing(method_name)
+  def method_missing(method_name, *args)
   	puts "The method #{method_name} doesnt exist."
   end
 end
