@@ -6,7 +6,7 @@ class Objectify
     file_path = File.expand_path("../#{file_name}.csv", __FILE__)
 
     if !File.exist?(file_path)
-      raise "The file: #{file_path} doesnt exist."
+      raise "You specified a file that doesn't exist:\n #{file_path}"
     else
       @file_path  = file_path # "/home/osifo/dev/trainings/advancedruby/CreateClassFromCSV/lib/person.csv"
       first_char = file_name[0]
