@@ -8,6 +8,6 @@ class DerivedString < String
   end
 
   def method_missing(method_name, *args)
-  	puts "The method #{method_name} doesnt exist."
+    puts "The method #{method_name} doesnt exist."
   end
 end
