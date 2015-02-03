@@ -7,8 +7,8 @@ loop do
   input = gets
   if input == "\n"  
     irbX = InteractiveProgram.new
-    bindingX = irbX.get_binding
-    irbX.execute(code, bindingX)
+    binding_obj = irbX.get_binding
+    irbX.execute(code, binding_obj)
     code = ""
   elsif /q/i =~ input 
     break
