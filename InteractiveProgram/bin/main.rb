@@ -5,6 +5,7 @@ puts "Enter code (or q to quit, Hit enter to execute)"
 
 irbX = InteractiveProgram.new
 binding_obj = irbX.get_binding
+
 loop do
   input = gets
   if input == "\n"  
