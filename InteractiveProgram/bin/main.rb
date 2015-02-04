@@ -11,7 +11,7 @@ loop do
   if input == "\n"  
     puts irbX.execute(code, binding_obj)
     code = ""
-  elsif /q/i =~ input 
+  elsif /^q$/i =~ input 
     break
   else
     code  += input
