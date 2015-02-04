@@ -1,6 +1,6 @@
 class InteractiveProgram
   def get_binding
-    return binding()
+    binding()
   end
    
   def execute(code,mybinding)
